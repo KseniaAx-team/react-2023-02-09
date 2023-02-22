@@ -1,4 +1,5 @@
 import React from 'react'
+import { Ingredient } from '../Ingredient/Ingredient'
 
 export const Ingredients = ({ingredients}) => {
   return (
@@ -7,7 +8,7 @@ export const Ingredients = ({ingredients}) => {
       <div>
         <ul>
             {
-              ingredients.map((ingredient) => !!ingredient && <li>{ingredient}</li>)
+              ingredients.map((ingredient) => !!ingredient && <Ingredient ingredient={ingredient}/>)
             }
         </ul>
       </div>
