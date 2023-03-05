@@ -13,6 +13,6 @@
 
 .text{
     min-width: 100%;
-    padding: 20px 0;
+    padding: 20px 5px;
     border: 1px dotted black;
 }
