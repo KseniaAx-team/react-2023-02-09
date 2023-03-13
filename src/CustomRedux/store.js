@@ -1,3 +1,4 @@
+//pattern Observer
 class Store {
   state;
 
@@ -35,6 +36,7 @@ class Store {
   }
 }
 
+//pattern Singlton
 export const createStore = (() => {
   let store;
 
