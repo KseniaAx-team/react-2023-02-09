@@ -12,4 +12,5 @@ const User = ({userId}) => {
     )
 }
 
-export default User
+export default User;
+
