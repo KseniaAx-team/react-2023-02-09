@@ -18,3 +18,4 @@ export const loadUsersIfNotExist = (restaurantId) => (dispatch, getState) => {
       .then((users) => dispatch(userActions.finishLoading(users)))
       .catch(() => dispatch(userActions.failLoading()));
   };
+  
