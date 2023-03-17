@@ -5,30 +5,29 @@ const initialState = {
     entities: {},
     ids: [],
     status: REQUEST_STATUSES.idle,
-  };
+};
 
-export const disheSlice = createSlice({
-    name: "dish",
+export const userSlice = createSlice({
+    name: "user",
     initialState,
     reducers:{
         startLoading: (state) => {
-            state.status = REQUEST_STATUSES.pending;
+                state.status = REQUEST_STATUSES.pending;
         },
         failLoading: (state) => {
             state.status = REQUEST_STATUSES.failed;
         },
         finishLoading: (state, { payload }) => {
-            state.entities = payload.reduce((acc, dish) => {
-                acc[dish.id] =  dish
+            state.entities = payload.reduce((acc, user) => {
+                acc[user.id] = user;
                 return acc;
             }, {});
-            state.ids = Array.from(new Set(payload.map(({ id }) => id)));
-            state.status = REQUEST_STATUSES.success;
-        }
+        state.ids = Array.from(new Set(payload.map(({ id }) => id)));
+        state.status = REQUEST_STATUSES.success;
+        } 
     }
 });
 
-
-export const dishActions = {
-    ...disheSlice.actions,
-};
+export const userActions = {
+    ...userSlice.actions
+}
