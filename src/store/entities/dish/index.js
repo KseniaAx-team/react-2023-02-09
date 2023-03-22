@@ -18,10 +18,10 @@ export const disheSlice = createSlice({
             state.status = REQUEST_STATUSES.failed;
         },
         finishLoading: (state, { payload }) => {
-            state.entities = payload.reduce((acc, dish) => {
+            state.entities = {...state.entities, ...payload.reduce((acc, dish) => {
                 acc[dish.id] =  dish
                 return acc;
-            }, {});
+            }, {})};
             state.ids = Array.from(new Set(payload.map(({ id }) => id)));
             state.status = REQUEST_STATUSES.success;
         }
