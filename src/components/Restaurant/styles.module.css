@@ -1,0 +1,10 @@
+.root{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.restauranTab{
+    margin: auto 10px 10px 0;
+}

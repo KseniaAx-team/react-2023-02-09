@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { selectRestaurantById } from "../../store/entities/restaurant/selectors";
-import { Menu } from "../Menu/Menu";
-import { Reviews } from "../Reviews/Reviews";
+import { Tab } from "../Tab/Tab";
+import styles from "./styles.module.css";
 
 export const Restaurant = () => {
   const { restaurantId } = useParams();
@@ -20,8 +20,11 @@ export const Restaurant = () => {
   return (
     <div>
       <h2>{name}</h2>
-      <Menu restaurantId={restaurantId} />
-      <Reviews restaurantId={restaurantId} />
+        <div className={styles.root}>
+          <Tab to="menu" title="Menu" className={styles.restauranTab}/>
+          <Tab to="reviews" title="Reviews" className={styles.restauranTab}/>
+        </div>
+      <Outlet />
     </div>
   );
 };

@@ -1,0 +1,19 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.dishes {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted black;
+}
+
+.searchPanel{
+    width: 350px;
+}

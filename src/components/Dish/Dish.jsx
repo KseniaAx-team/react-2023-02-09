@@ -6,11 +6,11 @@ import { BUTTON_VIEW_VARIANT } from "../Button/constants";
 
 import styles from "./styles.module.css";
 import { selectDishCount } from "../../store/cart/selectors";
-import { selectDishById } from "../../store/entities/dish/selectors";
+import { selectDishById, selectDishesById } from "../../store/entities/dish/selectors";
 import classNames from "classnames";
 
-export const Dish = ({ dishId, className }) => {
-  const dish = useSelector((state) => selectDishById(state, { dishId }));
+export const Dish = ({ dishId, className, type }) => {
+  const dish = useSelector((state) => type ? selectDishesById(state, { dishId }): selectDishById(state, { dishId }));
   const count = useSelector((state) =>
     selectDishCount(state, { dishName: dish?.name })
   );

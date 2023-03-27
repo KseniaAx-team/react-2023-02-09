@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { cartReducer } from "./cart/reducer";
-import { dishSlice } from "./entities/dish";
+import { allDishesSlice, dishSlice } from "./entities/dish";
 import { restaurantSlice } from "./entities/restaurant";
 import { reviewSlice } from "./entities/review";
 import { userSlice } from "./entities/user";
@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   restaurant: restaurantSlice.reducer,
   dish: dishSlice.reducer,
+  dishes: allDishesSlice.reducer,
   review: reviewSlice.reducer,
   user: userSlice.reducer,
 });
